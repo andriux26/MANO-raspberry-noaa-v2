@@ -39,7 +39,7 @@ done < <(atq)
 AT_COMMANDS=()
 for job in "${atq_jobs[@]}"; do
   job_id=$(echo "${job}" | awk '{print $1}')
-  cmd=$(at -c $job_id | grep -e "receive_meteor.sh" -e "receive_noaa.sh")
+  cmd=$(at -c $job_id | grep -e "receive_meteor.sh" -e "receive_noaa.sh" -e "receive_iss.sh")
   AT_COMMANDS+=("[${job}] -> ${cmd}")
 done
 
@@ -56,7 +56,7 @@ echo "---------------------------------------------"
 echo "Satellite SDR Settings:"
 while IFS= read -r res; do
   echo "  $res"
-done < <(grep -E 'noaa_(15|18|19)_|meteor_m2_' config/settings.yml)
+done < <(grep -E 'noaa_(15|18|19)_|meteor_m2_|zaria_' config/settings.yml)
 
 echo "---------------------------------------------"
 echo "USB Device Map:"
