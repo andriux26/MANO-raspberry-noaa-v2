@@ -43,6 +43,14 @@ meteor_receiver: 'rtl_fm'
 #   <satellite_name>_sat_min_elevation - threshold for sat elevation for specific satellite captures
 #   <satellite_name>_memory_threshold - for METEOR satellite, minimum free memory (MB) required to store pass in RAM
 
+zaria_schedule: true
+zaria_sdr_device_id: 0
+zaria_freq_offset: 0
+zaria_enable_bias_tee: true
+zaria_gain: 14.4
+zaria_sun_min_elevation: 0
+zaria_sat_min_elevation: 10
+
 noaa_15_schedule: true
 noaa_15_sdr_device_id: 0
 noaa_15_freq_offset: 0
