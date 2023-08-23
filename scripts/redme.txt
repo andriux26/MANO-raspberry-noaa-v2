@@ -1,0 +1,6 @@
+crontab -e
+And add this line:
+
+Copy code
+
+55 23 * * * /home/pi/copy_meteor_files.sh
