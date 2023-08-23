@@ -71,6 +71,7 @@ if [ "${update_tle}" == "1" ]; then
   #   because it cannot handle that level of sub-directory
   log "Clearing and re-creating TLE file with latest..." "INFO"
   echo -n "" > $TLE_OUTPUT
+  grep "ZARIA" $AMATEUR_TXT -A 2 >> $TLE_OUTPUT
   grep "NOAA 15" $WEATHER_TXT -A 2 >> $TLE_OUTPUT
   grep "NOAA 18" $WEATHER_TXT -A 2 >> $TLE_OUTPUT
   grep "NOAA 19" $WEATHER_TXT -A 2 >> $TLE_OUTPUT
@@ -125,6 +126,17 @@ fi
 
 # create schedules to call respective receive scripts
 log "Scheduling new capture jobs..." "INFO"
+
+
+
+if [ "$ZARIA_SCHEDULE" == "true" ]; then
+  log "Scheduling ZARIA captures..." "INFO"
+  $NOAA_HOME/scripts/schedule_captures.sh "ZARIA" "receive_iss.sh" $TLE_OUTPUT $start_time_ms $end_time_ms >> $NOAA_LOG 2>&1
+fi
+
+
+
+
 if [ "$NOAA_15_SCHEDULE" == "true" ]; then
   log "Scheduling NOAA 15 captures..." "INFO"
   $NOAA_HOME/scripts/schedule_captures.sh "NOAA 15" "receive_noaa.sh" $TLE_OUTPUT $start_time_ms $end_time_ms >> $NOAA_LOG 2>&1
@@ -139,9 +151,14 @@ if [ "$NOAA_19_SCHEDULE" == "true" ]; then
 fi
 if [ "$METEOR_M2_SCHEDULE" == "true" ]; then
   log "Scheduling Meteor-M2 3 captures..." "INFO"
-  #$NOAA_HOME/scripts/schedule_captures.sh "METEOR-M 2" "receive_meteor.sh" $TLE_OUTPUT $start_time_ms $end_time_ms >> $NOAA_LOG 2>&1
   $NOAA_HOME/scripts/schedule_captures.sh "METEOR-M2 3" "receive_meteor.sh" $TLE_OUTPUT $start_time_ms $end_time_ms >> $NOAA_LOG 2>&1
 fi
+
+
+
+
+
+
 log "Done scheduling jobs!" "INFO"
 
 if [ "${ENABLE_EMAIL_SCHEDULE_PUSH}" == "true" ]; then

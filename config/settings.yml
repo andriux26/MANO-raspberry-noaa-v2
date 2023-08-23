@@ -30,6 +30,8 @@ test_freq_offset: 0
 #   meteor_receiver - which receiver method to use (either 'rtl_fm' or 'gnuradio' or 'satdump')
 receiver_type: 'rtlsdr'
 
+
+zaria_receiver: 'rtl_fm'
 noaa_receiver: 'rtl_fm'
 meteor_receiver: 'rtl_fm'
 

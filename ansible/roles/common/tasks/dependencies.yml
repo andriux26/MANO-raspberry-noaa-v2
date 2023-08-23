@@ -52,10 +52,5 @@
     deb: https://github.com/Digitelektro/MeteorDemod/releases/download/2.5.5/meteordemod_2.5.5_armhf.deb
     state: present
 
-- name: install SatDump
-  become: yes
-  apt:
-    deb: "{{ noaa_home }}/software/satdump_1.1.0_armhf.deb"
-    state: present
-    update_cache: no
+
 ...

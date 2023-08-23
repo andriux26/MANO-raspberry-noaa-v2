@@ -3,6 +3,7 @@ DB_FILE={{ db_file }}
 WEB_HOME={{ web_home }}
 IMAGE_OUTPUT={{ images_output }}
 NOAA_AUDIO_OUTPUT={{ audio_output }}/noaa
+ZARIA_AUDIO_OUTPUT={{ audio_output }}/noaa
 METEOR_AUDIO_OUTPUT={{ audio_output }}/meteor
 NOAA_ANIMATION_OUTPUT={{ noaa_animation_output }}
 RAMFS_AUDIO={{ ramfs_path }}
@@ -15,7 +16,27 @@ TEST_GAIN={{ test_gain }}
 TEST_SDR_DEVICE_ID={{ test_sdr_device_id }}
 TEST_ENABLE_BIAS_TEE="{% if test_enable_bias_tee|lower == 'true' %}-T{% endif %}"
 TEST_FREQ_OFFSET={{ test_freq_offset }}
-NOAA_15_SCHEDULE={{ noaa_15_schedule|lower }}
+
+ZARIA_SCHEDULE={{ noaa_15_schedule|lower }}
+ZARIA_SDR_DEVICE_ID={{ noaa_15_sdr_device_id }}
+ZARIA_FREQ_OFFSET={{ noaa_15_freq_offset }}
+ZARIA_ENABLE_BIAS_TEE="{% if noaa_15_enable_bias_tee|lower == 'true' %}-T{% endif %}"
+ZARIA_GAIN={{ noaa_15_gain }}
+ZARIA_SUN_MIN_ELEV={{ noaa_15_sun_min_elevation }}
+ZARIA_SAT_MIN_ELEV={{ noaa_15_sat_min_elevation }}
+
+
+
+
+
+
+
+
+
+
+
+
+
 NOAA_15_SDR_DEVICE_ID={{ noaa_15_sdr_device_id }}
 NOAA_15_FREQ_OFFSET={{ noaa_15_freq_offset }}
 NOAA_15_ENABLE_BIAS_TEE="{% if noaa_15_enable_bias_tee|lower == 'true' %}-T{% endif %}"
@@ -73,6 +94,7 @@ PRUNE_OLDER_THAN={{ delete_older_than_n }}
 PRUNE_OLDEST={{ delete_oldest_n }}
 RECEIVER_TYPE={{ receiver_type }}
 NOAA_RECEIVER={{ noaa_receiver }}
+ZARIA_RECEIVER={{ noaa_receiver }}
 METEOR_RECEIVER={{ meteor_receiver }}
 NOAA_CROP_TELEMETRY={{ noaa_crop_telemetry|lower }}
 IMAGE_ANNOTATION_LOCATION={{ image_annotation_location }}

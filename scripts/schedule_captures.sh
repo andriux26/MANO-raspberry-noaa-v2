@@ -22,6 +22,10 @@ TLE_FILE=$3
 START_TIME_MS=$4
 END_TIME_MS=$5
 
+
+if [ "$OBJ_NAME" == "ZARIA" ]; then
+  SAT_MIN_ELEV=$ZARIA_SAT_MIN_ELEV
+fi
 if [ "$OBJ_NAME" == "NOAA 15" ]; then
   SAT_MIN_ELEV=$NOAA_15_SAT_MIN_ELEV
 fi
