@@ -1,0 +1,6 @@
+[reader]
+active = 1
+name = novmir
+type = batch
+provider = 44A0:000000
+request_handler = /etc/keys/request_handler.sh

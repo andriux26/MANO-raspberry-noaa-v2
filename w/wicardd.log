@@ -1,0 +1,22 @@
+12:17:59.980 wicardd: wicardd-win64 version 1.19 beelive (Dec 28 2015) http://wicard.tv
+12:17:59.980 wicardd: Build options: [AutoConf] [WinSerial] [WEBIF] [ExMLog] [TWIN]
+12:17:59.980 rusmir: Filter object created.
+12:17:59.981 novmir: cannot init reader handler
+12:17:59.981 wicardd: creating default balancer.
+12:17:59.981 default: [balancer] chain key missed, creating default chain including all readers.
+12:17:59.981 default: balancer object created, 1 stage(s).
+12:17:59.981 rusmir: reader/balancer 'novmir' not found
+12:17:59.982 RUS56E: auto_provider nor provider not defined, using auto_provider = all
+12:17:59.982 RUS56E: server at port 55555, key=[0102030405060708091011121314] started
+12:17:59.983 RUS56E: server worker thread started, pid 0, tid 0
+12:17:59.983 wicardd: registered 1 filter(s), 0 reader(s), 1 balancer(s), 0 tuner(s) and 1 server(s)
+12:17:59.983 webif: server worker thread started, pid 0, tid 0
+12:17:59.983 wicardd: loaded 1 user account(s)
+12:17:59.983 wicardd: ECM cache size = 0
+12:17:59.983 RUS56E: allocated memory for 2048 descriptors
+12:17:59.983 wicardd: main thread, pid 0, tid 0
+12:17:59.984 RUS56E: socket created fd=584
+12:17:59.987 wicardd: Discovery thread terminated.
+12:18:12.245 webif: Cannot open stream
+12:18:13.429 webif: Cannot open stream
+12:19:14.392 webif: Cannot open stream

@@ -1,0 +1,56 @@
+[global]
+
+#log = /home/pi/w/wicardd.log 
+#log_size = 30
+#syslog = 30
+#log_rb_size = 30
+syslog = 1
+debug = 3
+
+[webif]
+port = 8081
+debug = 0
+active = 1
+
+[dvb]
+active = 1
+type = DVBAPI3
+sdt = 1
+auto_update = 1
+emm_filter_mode = 0
+filter = dvb
+debug = 1
+ecm_info = 2
+
+[filter]
+name =rusmir
+rule = rule = caid=44A0;ident=000000;accept=novmir;
+rule = next
+
+
+
+
+[reader]
+active = 1
+name = novmir
+type = batch
+provider = 44A0:000000
+request_handler = /home/pi/w/request_handler.sh
+
+
+[server] 
+active = 1 
+name = RUS56E
+type = newcamd525 
+auto_provider = novmir
+port = 20000
+key = 0102030405060708091011121314 
+debug = 3 
+
+
+[account] 
+login = test 
+password = test 
+auto_update = 1
+
+
