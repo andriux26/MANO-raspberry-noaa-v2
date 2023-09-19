@@ -29,5 +29,6 @@ return array(
   "successful_delete_capture" => "Istrinta",
   "successful_delete_pass" => "Istrinta",
   "travel_direction" => "Kryptis",
+  "Log" => "Log",
 );
 ?>

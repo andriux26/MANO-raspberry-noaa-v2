@@ -32,21 +32,6 @@
       "minimum": 0,
       "maximum": 90
     },
-    "zaria_schedule":        { "type": "boolean" },
-    "zaria_sdr_device_id":   { "type": "number" },
-    "zaria_freq_offset":     { "type": "number" },
-    "zaria_enable_bias_tee": { "type": "boolean" },
-    "zaria_gain":            { "type": "number" },
-    "zaria_sun_min_elevation": {
-      "type": "number",
-      "minimum": -90,
-      "maximum": 90
-    },
-    "zaria_sat_min_elevation": {
-      "type": "number",
-      "minimum": 0,
-      "maximum": 90
-    },
     "noaa_18_schedule":        { "type": "boolean" },
     "noaa_18_sdr_device_id":   { "type": "number" },
     "noaa_18_freq_offset":     { "type": "number" },
@@ -202,25 +187,6 @@
     "test_enable_bias_tee",
     "test_freq_offset",
     "meteor_receiver",
-
-   
-
-
-    "zaria_schedule",
-    "zaria_sdr_device_id",
-    "zaria_freq_offset",
-    "zaria_enable_bias_tee",
-    "zaria_gain",
-    "zaria_sun_min_elevation",
-    "zaria_sat_min_elevation",
-
-
-
-
-
-
-
-
     "noaa_15_schedule",
     "noaa_15_sdr_device_id",
     "noaa_15_freq_offset",

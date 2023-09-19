@@ -1,12 +1,11 @@
 ---
 # base station configurations
-#   latitude: south values are negative   55.571899
-#   longitude: west values are negative   24.255682
-latitude: 55.571899
-longitude: 24.255682
+#   latitude: south values are negative
+#   longitude: west values are negative
+latitude: 55.435900
+longitude: 24.210000
 altitude: 0.0
-
-# time zone offset from UTC (for example, '-5' for US Eastern) 
+# time zone offset from UTC (for example, '-5' for US Eastern)
 timezone_offset: 3
 
 # ntp configurations
@@ -30,8 +29,6 @@ test_freq_offset: 0
 #   meteor_receiver - which receiver method to use (either 'rtl_fm' or 'gnuradio' or 'satdump')
 receiver_type: 'rtlsdr'
 
-
-zaria_receiver: 'rtl_fm'
 noaa_receiver: 'rtl_fm'
 meteor_receiver: 'rtl_fm'
 
@@ -45,47 +42,39 @@ meteor_receiver: 'rtl_fm'
 #   <satellite_name>_sat_min_elevation - threshold for sat elevation for specific satellite captures
 #   <satellite_name>_memory_threshold - for METEOR satellite, minimum free memory (MB) required to store pass in RAM
 
-zaria_schedule: true
-zaria_sdr_device_id: 0
-zaria_freq_offset: 0
-zaria_enable_bias_tee: true
-zaria_gain: 14.4
-zaria_sun_min_elevation: 0
-zaria_sat_min_elevation: 10
-
 noaa_15_schedule: true
 noaa_15_sdr_device_id: 0
 noaa_15_freq_offset: 0
-noaa_15_enable_bias_tee: true
-noaa_15_gain: 14.4
+noaa_15_enable_bias_tee: false
+noaa_15_gain: 49.6
 noaa_15_sun_min_elevation: 0
-noaa_15_sat_min_elevation: 10
+noaa_15_sat_min_elevation: 5
 
 noaa_18_schedule: true
 noaa_18_sdr_device_id: 0
 noaa_18_freq_offset: 0
-noaa_18_enable_bias_tee: true
-noaa_18_gain: 14.4
+noaa_18_enable_bias_tee: false
+noaa_18_gain: 49.6
 noaa_18_sun_min_elevation: 0
-noaa_18_sat_min_elevation: 10
+noaa_18_sat_min_elevation: 5
 
 noaa_19_schedule: true
 noaa_19_sdr_device_id: 0
 noaa_19_freq_offset: 0
-noaa_19_enable_bias_tee: true
-noaa_19_gain: 14.4
+noaa_19_enable_bias_tee: false
+noaa_19_gain: 49.6
 noaa_19_sun_min_elevation: 0
-noaa_19_sat_min_elevation: 10
+noaa_19_sat_min_elevation: 5
 
 meteor_m2_schedule: true
 meteor_m2_sdr_device_id: 0
 meteor_m2_freq_offset: 0
 meteor_m2_enable_bias_tee: true
-meteor_m2_gain: 14.4
+meteor_m2_gain: 49.6
 meteor_m2_sun_min_elevation: 0
 meteor_m2_sat_min_elevation: 5
 meteor_m2_memory_threshold: 600
-meteor_80k_interleaving: true
+meteor_80k_interleaving: false
 
 # how many days to schedule passes - note this MUST be an even integer,
 # and the current day counts as "1" - passes will be scheduled until midnight
@@ -131,7 +120,7 @@ delete_audio: true
 flip_meteor_image: true
 produce_spectrogram: true
 noaa_crop_telemetry: false
-noaa_crop_toptobottom: false
+noaa_crop_toptobottom: true
 image_annotation_location: 'NorthWest'
 extend_for_annotation: false
 produce_noaa_pristine_image: true
@@ -178,7 +167,7 @@ meteor_create_mercator_projection: false
 #   noaa_map_state_border_color - color of state borders (Americas only)
 noaa_map_crosshair_enable: true
 noaa_map_crosshair_color: "0xffff00"
-noaa_map_grid_degrees: 10.0
+noaa_map_grid_degrees: 0
 noaa_map_grid_color: "0xff0000"
 noaa_map_country_border_enable: true
 noaa_map_country_border_color: "0xffff00"
@@ -190,7 +179,7 @@ noaa_map_state_border_color: "0xffff00"
 #   noaa_thermal_temp_overlay_location - where to place the thermal map in images - valid options are:
 #        NorthWest, North, NorthEast, West, Center, East, SouthWest, South, SouthEast
 noaa_thermal_temp_overlay: true
-noaa_thermal_temp_overlay_location: 'NorthEast'
+noaa_thermal_temp_overlay_location: 'West'
 
 # locale settings for timezone and language
 #   timezone: see https://www.php.net/manual/en/timezones.php
@@ -226,9 +215,9 @@ web_port: 80
 enable_tls: false
 web_tls_port: 443
 cert_valid_days: 365
-lock_admin_page: false
+lock_admin_page: true
 admin_username: 'admin'
-admin_password: 'admin'
+admin_password: 'md165a'
 web_passes_date_format: 'm/d/Y'
 web_datetime_format: 'm/d/Y H:i:s'
 
@@ -276,7 +265,7 @@ enable_email_push: false
 email_push_address: test@ifttt.com
 enable_email_schedule_push: false
 enable_discord_push: true
-discord_webhook_url: 'https://discordapp.com/api/webhooks/829078761542647821/qnh6oUbPkfRmmrCvtR-zuy16aK0I4HpLaaDyiSVgOEzug3sOUTyBPnTOgy-boy4sN2Nu'
+discord_webhook_url: 'https://discordapp.com/api/webhooks/1147212977230073866/78DbJLO1bwK5nlmTyUqKzQc8v7N6QmdwmzzRE0ccTFlstzZkHuTG7hRonBIiUDnFPkIb'
 enable_twitter_push: false
 enable_facebook_push: false
 enable_instagram_push: false

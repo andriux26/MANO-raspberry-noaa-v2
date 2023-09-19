@@ -55,7 +55,6 @@ METEOR_FREQ="137.9000"
 NOAA15_FREQ="137.6200"
 NOAA18_FREQ="137.9125"
 NOAA19_FREQ="137.1000"
-ZARIA_FREQ="145.8000"
 
 # current date and time
 export START_DATE=$(date '+%d-%m-%Y %H:%M')
