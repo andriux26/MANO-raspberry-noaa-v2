@@ -38,25 +38,34 @@
             {% endif %}
           </a>
           <div class="card-body my-0 py-0 pt-3">
-            <h5 class="card-title"><center>{{ capture.sat_name }}</center></h5>
+          <h5 class="card-title"><center>{{ capture.sat_name }}</center></h5>
+
+
             <p>
-              <strong></strong>
-           
+             <center> <strong>{{ lang.elev }}: </strong>{{ capture.max_elev }}&#176;&nbsp;
+              {% if capture.azimuth_at_max != "" %}
+                {% if capture.azimuth_at_max >= 0 and capture.azimuth_at_max <= 180 %}E{% else %}W{% endif %}</center>
+              {% endif %}
+
+            
+ <br>
               {% if capture.pass_start_azimuth != '' %}
                 <strong></strong>
               {% endif %}
               {% if capture.direction != '' %}
                 <strong></strong>
-              {% endif %}
-              <strong><center>{{ lang.pass_start }}: </strong>{{ capture.pass_start|date(constant('Config\\Config::DATETIME_FORMAT')) }}</center>
-              <strong>
-</strong>
+
+            
+
+
+{% endif %}
+              <strong></strong>
                 {% if capture.gain == '0' %}
                   Auto
                 {% elseif capture.gain == '' %}
                   Unknown
                 {% else %}
-                                  {% endif %}
+                                  {% endif %}</center>
             </p>
           </div>
         </div>
